@@ -1,0 +1,35 @@
+*trailingwhitespace.txt*  See and remove trailing whitespace
+
+Author: Seth Riedel <https://github.com/brovie96>
+License: Same terms as Vim itself (see |license|)
+
+The highlighting provided by this plugin only works if `:syntax enable` has
+been called (most plugin managers do this or require you to do this anyway).
+See |:syntax-enable| for details on this.
+
+BASICS                                              *trailingwhitespace*
+
+This plugin allows you to see trailing whitespace at the end of a line while
+you are editing a buffer. By default, trailing whitespace is highlighted in
+the ErrorMsg color, but you can change it by changing highlighting for the
+TrailingWhitespace group. See |:highlight| for details on how to do this.
+
+                                                    *trailingwhitespace-clear*
+This plugin also exposes a trailingwhitespace#ClearTrailingWhitespace()
+function, which will remove all trailing whitespace from the current buffer.
+You can use this by `:nnoremap`-ing (or similar) a keystroke to call this
+function. For example: >
+
+    nnoremap <silent> <leader>w :call trailingwhitespace#ClearTrailingWhitespace()<cr>
+
+This function gives similar feedback to the `:substitute` command, in the
+bottom line (where commands are typed). For long files, it will print a
+message while it is working.
+
+ABOUT                                               *trailingwhitespace-about*
+
+Get the latest version or report a bug on GitHub:
+
+https://github.com/brovie96/trailingwhitespace.vim
+
+ vim:tw=78:et:ft=help:norl:
