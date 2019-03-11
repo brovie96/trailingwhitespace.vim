@@ -18,10 +18,10 @@ TrailingWhitespace group. See |:highlight| for details on how to do this.
 This plugin also exposes a trailingwhitespace#ClearTrailingWhitespace()
 function, which will remove all trailing whitespace from the current buffer.
 You can use this by `:nnoremap`-ing (or similar) a keystroke to call this
-function. For example: >
-
+function. For example:
+>
     nnoremap <silent> <leader>w :call trailingwhitespace#ClearTrailingWhitespace()<cr>
-
+<
 This function gives similar feedback to the `:substitute` command, in the
 bottom line (where commands are typed). For long files, it will print a
 message while it is working.
