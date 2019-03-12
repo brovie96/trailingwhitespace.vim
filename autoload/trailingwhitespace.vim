@@ -1,6 +1,6 @@
 "create function to remove trailing whitespace
 function! trailingwhitespace#ClearTrailingWhitespace() abort
-    "make sure trying this in a nonmodifiable file just prints a message
+    "make sure trying this in a nonmodifiable buffer just prints a message
     "instead of throwing an error
     if &modifiable
         "print 'Working...' message
@@ -40,7 +40,7 @@ function! trailingwhitespace#ClearTrailingWhitespace() abort
             echo 'No substitutions made'
         endif
     else
-        "state that file is nonmodifiable
-        echo 'File is nonmodifiable.'
+        "state that buffer is nonmodifiable
+        echo 'Buffer is nonmodifiable.'
     endif
 endfunction

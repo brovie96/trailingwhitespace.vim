@@ -23,7 +23,7 @@ function. For example:
     nnoremap <silent> <leader>w :call trailingwhitespace#ClearTrailingWhitespace()<cr>
 <
 This function gives similar feedback to the `:substitute` command, in the
-bottom line (where commands are typed). For long files, it will print a
+bottom line (where commands are typed). For long buffers, it will print a
 message while it is working.
 
 ABOUT                                               *trailingwhitespace-about*

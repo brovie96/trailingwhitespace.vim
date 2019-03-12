@@ -6,7 +6,7 @@ If you're like me and hate having useless trailing whitespace at the end of
 your lines, this plugin will highlight it so that you can notice and remove it
 as you edit. If you have a lot of trailing whitespace to remove, this plugin
 also includes a function that will remove all the trailing whitespace from a
-file. The highlighting requires `syntax enable` in your Vim configuration.
+buffer. The highlighting requires `syntax enable` in your Vim configuration.
 
 ### Origin
 This started out as a bit of my own Vim config, but then it finally occurred to
