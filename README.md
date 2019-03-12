@@ -9,7 +9,7 @@ also includes a function that will remove all the trailing whitespace from a
 buffer. The highlighting requires `syntax enable` in your Vim configuration.
 
 ### Origin
-This started out as a bit of my own Vim config, but then it finally occurred to
+This started out as a bit of [my own Vim config][my Vim config], but then it finally occurred to
 me that I could spin this particular bit of functionality off into its own
 plugin so that other people could use it. There's probably a lot of this kind
 of plugin out there, but mine is very simple and includes the minimum amount of
@@ -22,4 +22,5 @@ whitespace removal function, add a line in your Vim config to `nnoremap` a call
 to `trailingwhitespace#ClearTrailingWhitespace()` to your preferred key
 sequence (I use `<leader>w`).
 
+[my Vim config]: https://github.com/brovie96/vimrc/
 [vim-plug]: https://github.com/junegunn/vim-plug/
