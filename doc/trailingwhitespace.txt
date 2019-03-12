@@ -17,8 +17,8 @@ TrailingWhitespace group. See |:highlight| for details on how to do this.
                                                     *trailingwhitespace-clear*
 This plugin also exposes a trailingwhitespace#ClearTrailingWhitespace()
 function, which will remove all trailing whitespace from the current buffer.
-You can use this by `:nnoremap`-ing (or similar) a keystroke to call this
-function. For example:
+You can use this by using `:nnoremap` or a similar command in your Vim config
+to map a key sequence to call this function. For example:
 >
     nnoremap <silent> <leader>w :call trailingwhitespace#ClearTrailingWhitespace()<cr>
 <
