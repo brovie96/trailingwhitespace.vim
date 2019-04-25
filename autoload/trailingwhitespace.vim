@@ -6,15 +6,15 @@ function! trailingwhitespace#ClearTrailingWhitespace() abort
         "print 'Working...' message
         echo 'Working...'
 
-        "check if using linux and if so use linux commands (way faster than
+        "check if using a unix-based system and if so use sed (way faster than
         "vimscript)
         if has('unix')
             "use sed and wc to get number of lines conforming to pattern
             let l:lines = system('sed -n "/\s\+$/p" | wc -l', getline(1, '$'))
 
             if l:lines > 0
-                "hold on to cursor position (also gets preferred column, so nothing
-                "changes)
+                "hold on to cursor position (also gets preferred column, so
+                "nothing changes)
                 let l:startpos = getcurpos()
 
                 "get the top line of the window
@@ -32,8 +32,8 @@ function! trailingwhitespace#ClearTrailingWhitespace() abort
                 "return cursor to starting position
                 call setpos('.', l:startpos)
 
-                "redraw to avoid a multiline echo, which requires pressing enter to
-                "exit
+                "redraw to avoid a multiline echo, which requires pressing
+                "enter to exit
                 redraw
 
                 "mirror the message printed by :substitute
@@ -43,8 +43,8 @@ function! trailingwhitespace#ClearTrailingWhitespace() abort
                     echomsg printf('%d substitutions on %d lines', l:lines, l:lines)
                 endif
             else
-                "redraw to avoid a multiline echo, which requires pressing enter to
-                "exit
+                "redraw to avoid a multiline echo, which requires pressing
+                "enter to exit
                 redraw
 
                 "state that no lines were changed
@@ -69,8 +69,8 @@ function! trailingwhitespace#ClearTrailingWhitespace() abort
                 let l:linenum += 1
             endfor
 
-            "redraw to avoid a multiline echo, which requires pressing enter to
-            "exit
+            "redraw to avoid a multiline echo, which requires pressing enter
+            "to exit
             redraw
 
             if l:lines > 0
