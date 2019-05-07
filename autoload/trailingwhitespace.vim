@@ -37,7 +37,7 @@ function! s:ClearTrailingWhitespaceUnix() abort
         "move topline to top of screen
         "(if you're looking at this outside of Vim, this is using a literal ^E
         "character [looks like 'normal! ^E' when viewed in Vim])
-        execute '1'
+        execute l:topline
         while line('w0') < l:topline
             normal! 
         endwhile
