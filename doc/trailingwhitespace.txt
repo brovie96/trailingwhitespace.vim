@@ -21,7 +21,7 @@ trailingwhitespace#ClearTrailingWhitespace()~
 This plugin also includes an autoload function which will remove all trailing
 whitespace from the current buffer. On Unix platforms, this uses sed, making
 it rather fast, even on very large files. On other platforms, it falls back to
-a slower but still effective vimscript implementation. You can use this
+a slower but still effective Vimscript implementation. You can use this
 function by using `:nnoremap` or a similar command in your Vim config to map a
 key sequence to call this function. For example:
 >
