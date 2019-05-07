@@ -36,8 +36,8 @@ function! s:ClearTrailingWhitespaceUnix() abort
 
         "move topline to top of screen
         execute '1'
-        while line('w0') > l:topline
-            execute 'normal! <C-E>'
+        while line('w0') < l:topline
+            normal! 
         endwhile
 
         "return cursor to starting position
