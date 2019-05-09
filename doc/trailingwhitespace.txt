@@ -4,8 +4,8 @@ Author: Seth Riedel <https://github.com/brovie96>
 License: Same terms as Vim itself (see |license|)
 
 The highlighting provided by this plugin only works if `:syntax enable` has
-been called (most plugin managers do this or require you to do this anyway).
-See |:syntax-enable| for details on this.
+been called. However, most plugin managers do this or require you to do this
+anyway. See |:syntax-enable| for details on this.
 
                                                     *trailingwhitespace*
 BASICS~
@@ -20,10 +20,11 @@ trailingwhitespace#ClearTrailingWhitespace()~
 
 This plugin also includes an autoload function which will remove all trailing
 whitespace from the current buffer. On Unix platforms, this uses sed, making
-it rather fast, even on very large files. On other platforms, it falls back to
-a slower but still effective Vimscript implementation. You can use this
-function by using `:nnoremap` or a similar command in your Vim config to map a
-key sequence to call this function. For example:
+it rather fast, even on very large files. (Most of the time it takes is
+actually from restoring your window and cursor position.) On other platforms,
+it falls back to a slower but still effective Vimscript implementation. You
+can use this function by using `:nnoremap` or a similar command in your Vim
+config to map a key sequence to call this function. For example:
 >
     nnoremap <silent> <leader>w :call trailingwhitespace#ClearTrailingWhitespace()<cr>
 <

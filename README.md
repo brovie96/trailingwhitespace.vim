@@ -14,8 +14,9 @@ requires `syntax enable` in your Vim configuration.
 This started out as a bit of [my own Vim config][my Vim config], but then it
 finally occurred to me that I could spin this particular bit of functionality
 off into its own plugin so that other people could use it. There's probably a
-lot of this kind of plugin out there, but mine is very simple and includes the
-minimum amount of functionality necessary to do the two things that it does.
+lot of this kind of plugin out there, but mine is very simple and I strive to
+include the minimum amount of functionality necessary to do the two things that
+it does.
 
 ### Installation
 Install `brovie96/trailingwhitespace.vim` in your favorite plugin manager (I
