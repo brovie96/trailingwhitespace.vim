@@ -91,7 +91,7 @@ function! s:ClearTrailingWhitespaceVimscript() abort
     if l:lines > 0
         "mirror the message printed by :substitute
         if l:lines == 1
-                echomsg 'One substitution on one line'
+            echomsg 'One substitution on one line'
         else
             echomsg printf('%d substitutions on %d lines', l:lines, l:lines)
         endif
