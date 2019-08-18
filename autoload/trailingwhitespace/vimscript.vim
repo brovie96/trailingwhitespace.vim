@@ -1,4 +1,4 @@
-function! trailingwhitespace#unix#ClearTrailingWhitespace() abort
+function! trailingwhitespace#vimscript#ClearTrailingWhitespace() abort
     "set loop variables
     let l:lines = 0 | let l:linenum = 1
 
