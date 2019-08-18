@@ -44,24 +44,20 @@ function! s:ClearTrailingWhitespaceUnix() abort
 
         "return cursor to starting position
         call setpos('.', l:startpos)
+    endif
 
-        "redraw to avoid a multiline echo, which requires pressing
-        "enter to exit
-        redraw
+    "redraw to avoid a multiline echo, which requires pressing
+    "enter to exit
+    redraw
 
-        "mirror the message printed by :substitute
-        if l:lines == 1
-            echomsg 'One substitution on one line'
-        else
-            echomsg printf('%d substitutions on %d lines', l:lines, l:lines)
-        endif
-    else
-        "redraw to avoid a multiline echo, which requires pressing
-        "enter to exit
-        redraw
-
-        "state that no lines were changed
+    "mirror the message printed by :substitute
+    "or say if no substitutions were made
+    if l:lines == 0
         echo 'No substitutions made'
+    elseif l:lines == 1
+        echomsg 'One substitution on one line'
+    else
+        echomsg printf('%d substitutions on %d lines', l:lines, l:lines)
     endif
 endfunction
 
@@ -88,15 +84,13 @@ function! s:ClearTrailingWhitespaceVimscript() abort
     "to exit
     redraw
 
-    if l:lines > 0
-        "mirror the message printed by :substitute
-        if l:lines == 1
-            echomsg 'One substitution on one line'
-        else
-            echomsg printf('%d substitutions on %d lines', l:lines, l:lines)
-        endif
-    else
-        "state that no lines were changed
+    "mirror the message printed by :substitute
+    "or say if no substitutions were made
+    if l:lines == 0
         echo 'No substitutions made'
+    elseif l:lines == 1
+        echomsg 'One substitution on one line'
+    else
+        echomsg printf('%d substitutions on %d lines', l:lines, l:lines)
     endif
 endfunction
