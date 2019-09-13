@@ -6,12 +6,29 @@ function! trailingwhitespace#ClearTrailingWhitespace() abort
         "print 'Working...' message
         echo 'Working...'
 
+        "init variable to hold number of lines edited
+        let l:lines = 0
+
         "check if using a unix-based system and if so use sed (way faster than
         "vimscript)
         if has('unix')
-            call trailingwhitespace#unix#ClearTrailingWhitespace()
+            let l:lines = trailingwhitespace#unix#ClearTrailingWhitespace()
         else
-            call trailingwhitespace#vimscript#ClearTrailingWhitespace()
+            let l:lines = trailingwhitespace#vimscript#ClearTrailingWhitespace()
+        endif
+
+        "redraw to avoid a multiline echo, which requires pressing
+        "enter to exit
+        redraw
+
+        "mirror the message printed by :substitute
+        "or say if no substitutions were made
+        if l:lines == 0
+            echo 'No substitutions made'
+        elseif l:lines == 1
+            echomsg 'One substitution on one line'
+        else
+            echomsg printf('%d substitutions on %d lines', l:lines, l:lines)
         endif
     else
         "state that buffer is nonmodifiable

@@ -17,17 +17,6 @@ function! trailingwhitespace#vimscript#ClearTrailingWhitespace() abort
         let l:linenum += 1
     endfor
 
-    "redraw to avoid a multiline echo, which requires pressing enter
-    "to exit
-    redraw
-
-    "mirror the message printed by :substitute
-    "or say if no substitutions were made
-    if l:lines == 0
-        echo 'No substitutions made'
-    elseif l:lines == 1
-        echomsg 'One substitution on one line'
-    else
-        echomsg printf('%d substitutions on %d lines', l:lines, l:lines)
-    endif
+    "return the number of lines edited
+    return l:lines
 endfunction
