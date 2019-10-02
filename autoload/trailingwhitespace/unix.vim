@@ -14,12 +14,8 @@ function! trailingwhitespace#unix#ClearTrailingWhitespace() abort
         silent %!sed "s/\s\+$//"
 
         "move topline to top of screen
-        "(if you're looking at this outside of Vim, this is using a literal ^E
-        "character [looks like 'normal! ^E' when viewed in Vim])
-        execute l:topline
-        while line('w0') < l:topline
-            normal! 
-        endwhile
+        let l:diff = l:topline - line('w0')
+        execute 'normal!' l:diff . "\<C-E>"
 
         "return cursor to starting position
         call setpos('.', l:startpos)
