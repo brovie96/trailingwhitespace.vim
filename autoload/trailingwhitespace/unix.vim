@@ -15,7 +15,10 @@ function! trailingwhitespace#unix#ClearTrailingWhitespace() abort
 
         "move topline to top of screen
         let l:diff = l:topline - line('w0')
-        execute 'normal!' l:diff . "\<C-E>"
+
+        if l:diff > 0
+            execute 'normal!' l:diff . "\<C-E>"
+        endif
 
         "return cursor to starting position
         call setpos('.', l:startpos)
