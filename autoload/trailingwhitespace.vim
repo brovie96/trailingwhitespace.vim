@@ -9,16 +9,17 @@ function! trailingwhitespace#ClearTrailingWhitespace() abort
         "init variable to hold number of lines edited
         let l:lines = 0
 
-        "check if using a unix-based system and if so use sed (way faster than
-        "vimscript)
+        "check if using a unix-based system and if so use sed (substantially
+        "faster than vimscript on files with very large numbers of lines
+        "having trailing whitespace)
         if has('unix')
             let l:lines = trailingwhitespace#unix#ClearTrailingWhitespace()
         else
             let l:lines = trailingwhitespace#vimscript#ClearTrailingWhitespace()
         endif
 
-        "redraw to avoid a multiline echo, which requires pressing
-        "enter to exit
+        "redraw to avoid a multiline echo, which requires pressing enter to
+        "exit
         redraw
 
         "mirror the message printed by :substitute

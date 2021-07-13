@@ -7,9 +7,9 @@ your lines, this plugin will highlight it so that you can notice and remove it
 as you edit. If you have a lot of trailing whitespace to remove, this plugin
 also includes a function that will remove all the trailing whitespace from a
 buffer. This function uses `sed` on Unix-based systems for better performance
-on large files with many thousands of lines having trailing whitespace, but
-falls back to a Vimscript implementation (which is only slightly slower than
-the version using `sed` in most typical use cases) on other OS versions. The
+on files with very large numbers of lines having trailing whitespace, but falls
+back to a Vimscript implementation (which is only slightly slower than the
+version using `sed` in most typical use cases) on other OS versions. The
 highlighting requires `syntax enable` in your Vim configuration, which is
 coincidentally set or required to be set by most plugin managers.
 

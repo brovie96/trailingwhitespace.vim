@@ -3,8 +3,8 @@ function! trailingwhitespace#unix#ClearTrailingWhitespace() abort
     let l:lines = system('sed -n "/\s\+$/p" | wc -l', getline(1, '$'))
 
     if l:lines > 0
-        "hold on to cursor position (also gets preferred column, so
-        "nothing changes)
+        "hold on to cursor position (also gets preferred column, so nothing
+        "changes)
         let l:startpos = getcurpos()
 
         "get the top line of the window
