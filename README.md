@@ -1,6 +1,8 @@
 # trailingwhitespace.vim
 A trailing whitespace marking and removal plugin for Vim.
 
+![Demonstration of deleting trailing whitespace][gif]
+
 ### Purpose
 If you're like me and hate having useless trailing whitespace at the end of
 your lines, this plugin will highlight it so that you can notice and remove it
@@ -30,3 +32,4 @@ sequence (I use `<leader>w`).
 
 [my Vim config]: https://github.com/brovie96/vimrc/
 [vim-plug]: https://github.com/junegunn/vim-plug/
+[gif]: https://raw.githubusercontent.com/brovie96/trailingwhitespace.vim/master/trailingwhitespace.gif
