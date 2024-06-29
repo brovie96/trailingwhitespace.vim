@@ -1,9 +1,9 @@
 function! trailingwhitespace#unix#ClearTrailingWhitespace() abort
-    "store all lines in file
-    let l:all_lines = join(getline(1, '$'), "\n") . "\n"
+    "get all the lines in the buffer
+    let l:buflines = join(getline(1, '$'), "\n") . "\n"
 
     "use sed and wc to get number of lines conforming to pattern
-    let l:lines = system('sed -n "/\s\+$/p" | wc -l', l:all_lines)
+    let l:lines = system('sed -n "/\s\+$/p" | wc -l', l:buflines)
 
     if l:lines > 0
         "hold on to cursor position (also gets preferred column, so nothing
