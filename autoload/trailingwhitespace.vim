@@ -1,4 +1,3 @@
-"create function to remove trailing whitespace
 function! trailingwhitespace#ClearTrailingWhitespace() abort
     "make sure trying this in a nonmodifiable buffer just prints a message
     "instead of throwing an error
@@ -9,10 +8,10 @@ function! trailingwhitespace#ClearTrailingWhitespace() abort
         "init variable to hold number of lines edited
         let l:lines = 0
 
-        "check if using a unix-based system and if so use sed (substantially
-        "faster than vimscript on files with very large numbers of lines
-        "having trailing whitespace)
-        if has('unix')
+        "check if using a unix system with sed installed and if so use sed
+        "(substantially faster than vimscript on files with very large numbers
+        "of lines having trailing whitespace)
+        if has('unix') && system('which sed') !=# ''
             let l:lines = trailingwhitespace#unix#ClearTrailingWhitespace()
         else
             let l:lines = trailingwhitespace#vimscript#ClearTrailingWhitespace()
